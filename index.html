@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦊 Robin's AI提示词市场</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 40px 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 60px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { color: #8892b0; font-size: 1.1rem; }
+        .badge { 
+            display: inline-block; 
+            background: #64ffda; 
+            color: #1a1a2e; 
+            padding: 4px 12px; 
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .stats { 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+            margin-bottom: 40px;
+            color: #8892b0;
+        }
+        .stats strong { color: #64ffda; font-size: 1.5rem; }
+        .prompts { display: grid; gap: 20px; }
+        .prompt-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        .prompt-card:hover {
+            transform: translateY(-3px);
+            border-color: #64ffda;
+            background: rgba(255,255,255,0.08);
+        }
+        .prompt-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .prompt-card .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .tag { 
+            font-size: 0.75rem; 
+            padding: 3px 10px; 
+            border-radius: 12px;
+            background: rgba(100,255,218,0.15);
+            color: #64ffda;
+        }
+        .tag付费 { background: rgba(255,184,0,0.15); color: #ffb800; }
+        .prompt-card p { color: #8892b0; font-size: 0.9rem; line-height: 1.6; }
+        .prompt-card .action { margin-top: 16px; }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .btn-free {
+            background: #64ffda;
+            color: #1a1a2e;
+        }
+        .btn-free:hover { transform: scale(1.05); }
+        .section-title { 
+            text-align: center; 
+            margin: 40px 0 20px; 
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+        .wechat {
+            background: rgba(255,255,255,0.05);
+            border: 1px dashed #64ffda;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .wechat h3 { margin-bottom: 10px; }
+        .wechat p { color: #8892b0; margin-bottom: 15px; }
+        footer { text-align: center; margin-top: 60px; color: #8892b0; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦊 Robin's AI提示词市场</h1>
+            <p class="subtitle">让AI帮你干活，先从好的提示词开始</p>
+            <span class="badge">🟢 7×24 自动运转中</span>
+        </header>
+
+        <div class="stats">
+            <div><strong>10</strong><br>精选提示词</div>
+            <div><strong>免费</strong><br>开放使用</div>
+            <div><strong>7×24</strong><br>自动服务</div>
+        </div>
+
+        <div class="prompts">
+            <div class="prompt-card">
+                <h3>📝 爆款小红书文案生成器</h3>
+                <div class="tags">
+                    <span class="tag">内容创作</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>快速生成小红书风格的种草文案、测评笔记、干货分享。输入产品/主题，自动生成3条爆款文案。</p>
+                <div class="action">
+                    <a href="prompts/01-xiaohongshu-generator.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>💻 Python代码审查专家</h3>
+                <div class="tags">
+                    <span class="tag">编程开发</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>高级Python开发工程师帮你审查代码。检查bug、性能优化、代码规范、安全漏洞。</p>
+                <div class="action">
+                    <a href="prompts/02-python-code-reviewer.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>📊 SQL查询优化大师</h3>
+                <div class="tags">
+                    <span class="tag">数据库运维</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>分析慢SQL，提供索引优化、SQL改写、架构调整建议。提升数据库查询性能。</p>
+                <div class="action">
+                    <a href="prompts/03-sql-optimizer.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>🎬 短视频脚本生成器</h3>
+                <div class="tags">
+                    <span class="tag">视频创作</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>快速生成抖音/B站/视频号短视频脚本。前3秒钩子+节奏紧凑+强引导，帮你上热门。</p>
+                <div class="action">
+                    <a href="prompts/04-short-video-script.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>📧 高效邮件撰写助手</h3>
+                <div class="tags">
+                    <span class="tag">职场效率</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>快速撰写专业邮件：商务沟通、求职面试、客户跟进、节日祝福。</p>
+                <div class="action">
+                    <a href="prompts/05-email-writer.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>📖 文章结构大师</h3>
+                <div class="tags">
+                    <span class="tag">内容创作</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>快速搭建文章框架：博客、公众号、论文、报告。输出完整大纲和写作要点。</p>
+                <div class="action">
+                    <a href="prompts/06-article-structure.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>🧪 快速API设计助手</h3>
+                <div class="tags">
+                    <span class="tag">编程开发</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>快速设计RESTful API：接口文档、架构设计、前后端对接。</p>
+                <div class="action">
+                    <a href="prompts/07-api-designer.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>📢 社交媒体运营助手</h3>
+                <div class="tags">
+                    <span class="tag">运营推广</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>批量生成社交媒体内容：微博、Twitter、LinkedIn、知乎。</p>
+                <div class="action">
+                    <a href="prompts/08-social-media.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>🏷️ 精准起名大师</h3>
+                <div class="tags">
+                    <span class="tag">品牌营销</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>产品/项目/账号起名：SaaS工具、公众号、视频号、App。20个名字任选。</p>
+                <div class="action">
+                    <a href="prompts/09-naming-master.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <h3>🤖 AI工具评测师</h3>
+                <div class="tags">
+                    <span class="tag">产品评测</span>
+                    <span class="tag">免费</span>
+                </div>
+                <p>深入评测AI产品：ChatGPT、Claude、Midjourney、国产AI工具。</p>
+                <div class="action">
+                    <a href="prompts/10-ai-tool-reviewer.md" class="btn btn-free">查看提示词 →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wechat">
+            <h3>💬 联系合作</h3>
+            <p>付费提示词 / 定制服务 / 商务合作<br>微信：添加中</p>
+            <a href="#" class="btn btn-free">添加微信 →</a>
+        </div>
+
+        <footer>
+            <p>🦊 Robin | 7×24 自动运转中</p>
+        </footer>
+    </div>
+</body>
+</html>
